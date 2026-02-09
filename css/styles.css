@@ -193,7 +193,6 @@ body::after {
         transform: translateY(0) scale(1) rotate(0.5deg);
     }
 }
-}
 
 /* ============================================
    CONTAINER & LAYOUT
@@ -735,7 +734,6 @@ body::after {
     top: -14px;
     right: -8px;
     font-size: 2rem;
-}
 }
 
 .final-message {
