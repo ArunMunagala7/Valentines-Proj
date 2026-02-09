@@ -1,0 +1,539 @@
+/* ============================================
+   THEME-SPECIFIC ROMANTIC ANIMATIONS
+   ============================================ */
+
+.theme-particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 4;
+    overflow: hidden;
+}
+
+/* ============================================
+   LOVE LANGUAGE ANIMATIONS
+   ============================================ */
+
+/* Quality Time - Sunset Particles */
+.sunset-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, rgba(255, 122, 89, 0.8), rgba(255, 177, 153, 0.4));
+    border-radius: 50%;
+    animation: sunsetFloat 6s ease-in-out infinite;
+    box-shadow: 0 0 10px rgba(255, 122, 89, 0.6);
+}
+
+@keyframes sunsetFloat {
+    0%, 100% {
+        transform: translateY(100vh) translateX(0) scale(0.5);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-20vh) translateX(50px) scale(1);
+        opacity: 0.9;
+    }
+    90% {
+        opacity: 0.8;
+    }
+}
+
+.sunset-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 122, 89, 0.25), transparent 70%);
+    animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.5; }
+}
+
+/* Words - Floating Text */
+.word-sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, rgba(194, 24, 91, 0.9), rgba(255, 77, 141, 0.5));
+    border-radius: 50%;
+    animation: sparkleRise 5s ease-out infinite;
+    box-shadow: 0 0 8px rgba(194, 24, 91, 0.7);
+}
+
+@keyframes sparkleRise {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.floating-word {
+    position: absolute;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: rgba(194, 24, 91, 0.7);
+    animation: wordFloat 8s ease-in-out infinite;
+    text-shadow: 0 4px 12px rgba(194, 24, 91, 0.4);
+}
+
+@keyframes wordFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20%, 80% {
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-80px) rotate(10deg);
+    }
+}
+
+/* Acts - Lavender Stars */
+.lavender-bloom {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, rgba(159, 122, 234, 0.8), rgba(214, 188, 250, 0.4));
+    border-radius: 50%;
+    animation: bloomFloat 7s ease-in-out infinite;
+    box-shadow: 0 0 15px rgba(123, 95, 197, 0.6);
+}
+
+@keyframes bloomFloat {
+    0%, 100% {
+        transform: translateY(100vh) translateX(0) scale(0.3);
+        opacity: 0;
+    }
+    10%, 90% {
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateY(10vh) translateX(-40px) scale(1.2);
+    }
+}
+
+.gentle-star {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: starTwinkle 3s ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Gifts - Sparkle Trails */
+.gift-sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, rgba(255, 77, 109, 0.9), rgba(255, 159, 176, 0.5));
+    border-radius: 50%;
+    animation: giftSparkle 4s linear infinite;
+    box-shadow: 0 0 12px rgba(161, 18, 91, 0.8);
+}
+
+@keyframes giftSparkle {
+    0% {
+        transform: translateY(0) translateX(0) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) translateX(100px) scale(1);
+        opacity: 0;
+    }
+}
+
+.sparkle-trail {
+    position: absolute;
+    width: 3px;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(255, 77, 109, 0.8), transparent);
+    animation: trailFall 2s linear;
+}
+
+@keyframes trailFall {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* ============================================
+   VIBE ANIMATIONS
+   ============================================ */
+
+/* Cozy - Warm Embers */
+.cozy-ember {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: radial-gradient(circle, rgba(255, 122, 59, 0.9), rgba(255, 177, 153, 0.4));
+    border-radius: 50%;
+    animation: emberRise 8s ease-out infinite;
+    box-shadow: 0 0 10px rgba(255, 122, 59, 0.7);
+}
+
+@keyframes emberRise {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-10vh) translateX(30px);
+        opacity: 0;
+    }
+}
+
+.warm-glow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: radial-gradient(ellipse at bottom, rgba(255, 122, 59, 0.2), transparent 70%);
+    animation: warmPulse 5s ease-in-out infinite;
+}
+
+@keyframes warmPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.6; }
+}
+
+/* Adventure - Ocean Waves and Bubbles */
+.adventure-bubble {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(0, 168, 255, 0.4));
+    border-radius: 50%;
+    animation: bubbleFloat 6s ease-in infinite;
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes bubbleFloat {
+    0% {
+        transform: translateY(100vh) translateX(0) scale(0.5);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(30vh) translateX(50px) scale(1);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(-10vh) translateX(-20px) scale(0.8);
+        opacity: 0;
+    }
+}
+
+.ocean-wave {
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 200%;
+    height: 150px;
+    background: linear-gradient(to top, rgba(0, 168, 255, 0.15), transparent);
+    animation: waveMove 8s ease-in-out infinite;
+}
+
+@keyframes waveMove {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(50%); }
+}
+
+/* Romantic - Rose Petals */
+.rose-petal {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(ellipse, rgba(255, 95, 158, 0.8), rgba(255, 179, 209, 0.4));
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(45deg);
+    animation: petalDrift 8s ease-in-out infinite;
+}
+
+@keyframes petalDrift {
+    0% {
+        transform: translateY(-5vh) translateX(0) rotate(45deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) translateX(80px) rotate(405deg);
+        opacity: 0;
+    }
+}
+
+.rose-petal-fall {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: petalFall 7s linear;
+}
+
+@keyframes petalFall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Fun - Confetti */
+.fun-confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, rgba(255, 111, 145, 0.9), rgba(255, 216, 111, 0.9));
+    border-radius: 2px;
+    animation: confettiFall 4s linear infinite;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    animation: confettiDrop 4s ease-in;
+}
+
+@keyframes confettiDrop {
+    0% {
+        transform: translateY(-10vh) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(720deg) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   MEMORY ANIMATIONS
+   ============================================ */
+
+/* Laughs - Burst Effect */
+.laugh-burst {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 5rem;
+    animation: burstOut 2s ease-out infinite;
+}
+
+@keyframes burstOut {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+}
+
+.laugh-burst-particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, rgba(255, 152, 0, 0.9), rgba(255, 213, 79, 0.5));
+    border-radius: 50%;
+    animation: burstParticle 3s ease-out infinite;
+}
+
+@keyframes burstParticle {
+    0% {
+        transform: translate(0, 0) scale(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x, 50px), var(--y, 50px)) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Quiet - Moonlight */
+.quiet-star {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(176, 190, 197, 0.5));
+    border-radius: 50%;
+    animation: quietTwinkle 4s ease-in-out infinite;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes quietTwinkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.moonlight-glow {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 60%);
+    border-radius: 50%;
+    animation: moonGlow 6s ease-in-out infinite;
+}
+
+@keyframes moonGlow {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.1); }
+}
+
+/* Adventures - Compass */
+.adventure-trail {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, rgba(0, 184, 148, 0.9), rgba(85, 239, 196, 0.5));
+    border-radius: 50%;
+    animation: trailMove 5s linear infinite;
+    box-shadow: 0 0 10px rgba(0, 184, 148, 0.7);
+}
+
+@keyframes trailMove {
+    0% {
+        transform: translateX(-10vw) translateY(50vh);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(110vw) translateY(50vh);
+        opacity: 0;
+    }
+}
+
+.compass-rose {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 4rem;
+    animation: compassSpin 8s linear infinite;
+}
+
+@keyframes compassSpin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+        opacity: 0.5;
+    }
+}
+
+/* All Memories - Rainbow */
+.rainbow-heart {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(135deg, #ff6f91, #9b59b6, #00b894);
+    border-radius: 50%;
+    animation: rainbowFloat 6s ease-in-out infinite;
+    box-shadow: 0 0 15px rgba(155, 89, 182, 0.6);
+}
+
+@keyframes rainbowFloat {
+    0%, 100% {
+        transform: translateY(100vh) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(30vh) translateX(50px) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+.rainbow-spiral {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 3px solid transparent;
+    border-image: linear-gradient(135deg, #ff6f91, #9b59b6, #00b894) 1;
+    border-radius: 50%;
+    animation: spiralExpand 4s ease-out infinite;
+}
+
+@keyframes spiralExpand {
+    0% {
+        transform: translate(-50%, -50%) scale(0) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .floating-word {
+        font-size: 1.8rem;
+    }
+    
+    .laugh-burst {
+        font-size: 3rem;
+    }
+    
+    .compass-rose {
+        font-size: 2.5rem;
+    }
+}

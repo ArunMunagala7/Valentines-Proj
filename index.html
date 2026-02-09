@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? 💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/theme-animations.css">
+</head>
+<body>
+    <!-- Background music -->
+    <!-- <audio id="bgMusic" loop volume="0.3">
+        <source src="assets/background-music.mp3" type="audio/mpeg">
+    </audio> -->
+
+    <!-- Floating hearts container -->
+    <div id="hearts-container" class="hearts-container"></div>
+
+    <!-- Main container -->
+    <div id="app" class="app">
+        
+        <!-- Page 1: Main Question -->
+        <div id="page-main" class="page active">
+            <div class="container main-page">
+                <h1 class="main-title">Hey Beautiful 💕</h1>
+                <p class="intro-text">I have something important to ask you...</p>
+                
+                <div class="main-question">
+                    <h2>Will you be my Valentine?</h2>
+                    <div class="button-container">
+                        <button id="yes-btn-main" class="btn btn-yes">YES! ❤️</button>
+                        <button id="no-btn-main" class="btn btn-no">No</button>
+                    </div>
+                </div>
+
+                <p class="hint-text">💌 PS: Pick carefully... the 'No' button has a mind of its own!</p>
+            </div>
+        </div>
+
+        <!-- Page 2: Personality Questions -->
+        <div id="page-questions" class="page">
+            <div class="container questions-page">
+                <h1 class="section-title">Let me get to know you better 💬</h1>
+                <p class="section-subtitle">Answer these questions so I can tailor everything to you</p>
+
+                <!-- Question 1: Love Language -->
+                <div class="question-card">
+                    <h3>What's your love language?</h3>
+                    <div class="options">
+                        <button class="option-btn" data-question="love-language" data-answer="quality-time" data-color="theme-sunset">
+                            ⏰ Quality Time
+                        </button>
+                        <button class="option-btn" data-question="love-language" data-answer="words" data-color="theme-rose">
+                            💬 Words of Affirmation
+                        </button>
+                        <button class="option-btn" data-question="love-language" data-answer="acts" data-color="theme-lavender">
+                            🤝 Acts of Service
+                        </button>
+                        <button class="option-btn" data-question="love-language" data-answer="gifts" data-color="theme-cherry">
+                            🎁 Gifts
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 2: Our Vibe -->
+                <div class="question-card">
+                    <h3>How would you describe our vibe?</h3>
+                    <div class="options">
+                        <button class="option-btn" data-question="vibe" data-answer="cozy" data-color="theme-warm">
+                            🔥 Cozy & Intimate
+                        </button>
+                        <button class="option-btn" data-question="vibe" data-answer="adventure" data-color="theme-ocean">
+                            🗺️ Adventure & Spontaneous
+                        </button>
+                        <button class="option-btn" data-question="vibe" data-answer="romantic" data-color="theme-elegant">
+                            🌹 Romantic & Elegant
+                        </button>
+                        <button class="option-btn" data-question="vibe" data-answer="fun" data-color="theme-playful">
+                            🎉 Fun & Quirky
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 3: Favorite Memory Category -->
+                <div class="question-card">
+                    <h3>What's your favorite type of memory with me?</h3>
+                    <div class="options">
+                        <button class="option-btn" data-question="memory" data-answer="laughs" data-color="theme-citrus">
+                            😂 Laughs & Inside Jokes
+                        </button>
+                        <button class="option-btn" data-question="memory" data-answer="quiet" data-color="theme-mint">
+                            🌙 Quiet Moments
+                        </button>
+                        <button class="option-btn" data-question="memory" data-answer="adventures" data-color="theme-tropical">
+                            🌴 Adventures & Travels
+                        </button>
+                        <button class="option-btn" data-question="memory" data-answer="all" data-color="theme-rainbow">
+                            ✨ All of the above!
+                        </button>
+                    </div>
+                </div>
+
+                <div class="progress-indicator">
+                    <p>Answer all questions to continue</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 5: Photo Gallery -->
+        <div id="page-gallery" class="page">
+            <div class="container gallery-page">
+                <h1 class="section-title">Our Moments Together 📸</h1>
+                <p class="section-subtitle">Click each photo to reveal a memory</p>
+
+                <div class="gallery-grid">
+                    <!-- Photos will be generated by JavaScript -->
+                </div>
+
+                <button id="continue-btn-gallery" class="btn btn-primary">Continue ➜</button>
+            </div>
+        </div>
+
+        <!-- Page 4: Mini Game -->
+        <div id="page-game" class="page">
+            <div class="container game-page">
+                <h1 class="section-title">Fill in Our Special Words 💕</h1>
+                <p class="section-subtitle">Guess the letters to reveal words that are special to us!</p>
+
+                <div class="game-container">
+                    <div class="hangman-word" id="hangman-word">
+                        <!-- Letter blanks will be generated by JavaScript -->
+                    </div>
+                    
+                    <div class="game-hint" id="game-hint">
+                        <!-- Hint appears here -->
+                    </div>
+                    
+                    <div class="alphabet-buttons" id="alphabet-buttons">
+                        <!-- Letter buttons will be generated by JavaScript -->
+                    </div>
+                    
+                    <div class="game-status" id="game-status">
+                        <!-- Status messages appear here -->
+                    </div>
+
+                    <button id="next-word-btn" class="btn btn-primary" style="display:none; margin-top: 20px;">Next Word ➜</button>
+                </div>
+
+                <button id="continue-btn-game" class="btn btn-primary" style="display:none; margin-top: 20px;">Continue to Our Memories ➜</button>
+            </div>
+        </div>
+
+        <!-- Page 6: Final Message & Celebration -->
+        <div id="page-final" class="page">
+            <div class="container final-page">
+                <h1 class="section-title">You Said YES! 🎉</h1>
+                
+                <div class="final-message-card">
+                    <p id="final-message" class="final-message">
+                        From the moment I met you, I knew there was something special about you. Every day with you is an adventure, every moment a treasure. You make me laugh when I'm down, you inspire me to be better, and you love me in a way I never knew was possible. You're not just someone I want to spend Valentine's Day with—you're someone I want to spend every day with. So here's my question: Will you be my Valentine? Not just for today, but for all the days to come. Because honestly, life is just better with you in it. ❤️
+                    </p>
+                </div>
+
+                <div class="final-actions">
+                    <button id="celebrate-btn" class="btn btn-yes" style="font-size: 18px;">Celebrate! 🎊</button>
+                    <button id="bookmark-btn" class="btn btn-secondary">📌 Bookmark This</button>
+                </div>
+
+                <div class="love-stats">
+                    <p>💕 Happy Valentine's Day, my love!</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Secret Love Notes (hidden overlays) -->
+    <div id="secret-notes-overlay" class="secret-notes-overlay">
+        <div class="secret-note">
+            <span class="close-note">&times;</span>
+            <p id="secret-note-content"></p>
+        </div>
+    </div>
+
+    <!-- Confetti canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Scripts -->
+    <script src="js/confetti.js"></script>
+    <script src="js/floating-hearts.js"></script>
+    <script src="js/theme-animations.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
