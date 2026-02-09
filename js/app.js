@@ -49,7 +49,7 @@ const app = {
     gameWords: [
         { word: 'kalesh', hint: 'When we playfully argue 😄' },
         { word: 'sweetheart', hint: 'What you are to me 💕' },
-        { word: 'jaanu', hint: 'My special name for you 😊' },
+        { word: 'jaanu', hint: 'Your special name for me 😊' },
         { word: 'touchwood', hint: 'What we say to keep good luck 🤞' },
         { word: 'nazar', hint: 'Protection from the evil eye 🧿' },
         { word: 'gnn', hint: 'Our special goodnight 🌙' }
@@ -127,12 +127,7 @@ const app = {
             document.getElementById('secret-notes-overlay').classList.remove('active');
         });
 
-        // Random secret notes appearing periodically
-        setInterval(() => {
-            if (Math.random() < 0.3) { // 30% chance every 5 seconds
-                this.revealSecretNote();
-            }
-        }, 5000);
+        // (Removed random secret notes/emoji popup)
     },
 
     // Handle answer to questions
@@ -181,17 +176,38 @@ const app = {
         const body = document.body;
         body.classList.add('theme-active');
 
+        // Remove previous theme classes
+        body.classList.remove(
+            'theme-sunset','theme-rose','theme-lavender','theme-cherry',
+            'theme-warm','theme-ocean','theme-elegant','theme-playful',
+            'theme-citrus','theme-mint','theme-tropical','theme-rainbow',
+            'theme-bg-1','theme-bg-2','theme-bg-3','theme-bg-4','theme-bg-5','theme-bg-6','theme-bg-7','theme-bg-8','theme-bg-9','theme-bg-10','theme-bg-11','theme-bg-12'
+        );
+
+        // Dramatic backgrounds for each answer
+        let themeClass = '';
         if (question === 'love-language') {
             body.dataset.loveLanguage = answer;
+            if (answer === 'quality-time') themeClass = 'theme-bg-1';
+            if (answer === 'words') themeClass = 'theme-bg-2';
+            if (answer === 'acts') themeClass = 'theme-bg-3';
+            if (answer === 'gifts') themeClass = 'theme-bg-4';
         }
-
         if (question === 'vibe') {
             body.dataset.vibe = answer;
+            if (answer === 'cozy') themeClass = 'theme-bg-5';
+            if (answer === 'adventure') themeClass = 'theme-bg-6';
+            if (answer === 'romantic') themeClass = 'theme-bg-7';
+            if (answer === 'fun') themeClass = 'theme-bg-8';
         }
-
         if (question === 'memory') {
             body.dataset.memory = answer;
+            if (answer === 'laughs') themeClass = 'theme-bg-9';
+            if (answer === 'quiet') themeClass = 'theme-bg-10';
+            if (answer === 'adventures') themeClass = 'theme-bg-11';
+            if (answer === 'all') themeClass = 'theme-bg-12';
         }
+        if (themeClass) body.classList.add(themeClass);
 
         // Trigger theme animations
         if (typeof themeAnimations !== 'undefined') {
@@ -218,29 +234,10 @@ const app = {
     createPhotoGallery() {
         const gallery = document.querySelector('.gallery-grid');
         gallery.innerHTML = '';
-        gallery.classList.add('heart-gallery');
-        // Improved heart shape coordinates (percentages, visually tuned for 13 photos)
-        const heartCoords = [
-            {left:50, top:18},
-            {left:35, top:28}, {left:65, top:28},
-            {left:25, top:44}, {left:75, top:44},
-            {left:32, top:60}, {left:68, top:60},
-            {left:41, top:72}, {left:59, top:72},
-            {left:50, top:60},
-            {left:42, top:40}, {left:58, top:40},
-            {left:50, top:35}
-        ];
+        gallery.classList.remove('heart-gallery');
         for (let i = 1; i <= 13; i++) {
             const photoCard = document.createElement('div');
-            photoCard.className = 'photo-card heart-photo';
-            // Position in heart
-            const pos = heartCoords[i-1];
-            photoCard.style.left = pos.left + '%';
-            photoCard.style.top = pos.top + '%';
-            photoCard.style.transform = 'translate(-50%, -50%)';
-            // Make photos bigger
-            photoCard.style.width = '170px';
-            photoCard.style.height = '170px';
+            photoCard.className = 'photo-card';
             const img = document.createElement('img');
             img.src = `photos/photo${i}.jpeg`;
             img.alt = `Our memory ${i}`;
@@ -273,6 +270,17 @@ const app = {
         this.wordsCompleted = 0;
         this.setupWord();
         this.createAlphabetButtons();
+        // Add keyboard listener for hangman
+        if (!this._hangmanKeyListener) {
+            this._hangmanKeyListener = (e) => {
+                if (!document.getElementById('page-game').classList.contains('active')) return;
+                const letter = e.key.toLowerCase();
+                if (/^[a-z]$/.test(letter)) {
+                    this.guessLetter(letter);
+                }
+            };
+            window.addEventListener('keydown', this._hangmanKeyListener);
+        }
     },
 
     setupWord() {
